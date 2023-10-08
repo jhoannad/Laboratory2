@@ -4,24 +4,16 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class SearchModel extends Model
+class MusicModel extends Model
 {
-    
     protected $DBGroup          = 'default';
     protected $table            = 'music';
-    public function searchSongs($searchTerm)
-    {
-        // Use the Query Builder to perform the search
-        return $this->like('title', $searchTerm)
-                    ->orLike('artist', $searchTerm)
-                    ->findAll();
-    }
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['song', 'sPath'];
+    protected $allowedFields    = ['id','musicname','file_path'];
 
     // Dates
     protected $useTimestamps = false;
